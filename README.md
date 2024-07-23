@@ -1,0 +1,6 @@
+Este repositorio contiene el trabajo que realizamos [Yunoen](https://twitter.com/YunoenB) y [yo](https://twitter.com/jjsantoso) en el evento HackCDMX del año 2018, en el reto #4 sobre movilidad, del cual obtivimos el primer lugar. Nuestra propuesta consistió en usar los datos de detalles de los viajes de los autobuses de la línea 1 del sistema Metrobús para hacer un modelo de machine learning que predice el tiempo de viaje entre dos estaciones cualquiera de la línea.
+Estimamos un modelo XGBoost con una función Poisson usando las siguientes variables de interés como predictores: distancia, estación, tiempo del  ́ultimo metrobus, tráfico, número de estaciones por recorrer, intersecciones viales y variables climáticas.
+
+El código que usamos para entrenar el modelo se encuentra en el notebook [hackmx_metrobus.ipynb](/hackmx_metrobus.ipynb). Escribimos un reporte técnico en el archivo [reporte_final.pdf](/reporte_final.pdf) que describe el proceso de limpieza de datos, la selección de variables y la estimación del modelo.
+
+También construimos una aplicación web en Flask que permite a los usuarios ingresar las estaciones de origen y destino para obtener una predicción del tiempo de viaje. El código de la aplicación se encuentra en la carpeta [app](/app).

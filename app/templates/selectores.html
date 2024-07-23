@@ -1,0 +1,52 @@
+<form class="form" id="form_select_indicador" method="GET" action="{{url_for('calcula')}}">
+    <label for="origen">Estación origen:</label>
+    <select id="origen" name="origen" class="selectpicker" style="width: 400px;" data-live-search="true">
+        {% for I in opc_est%}
+            {% if I == est_o %}
+                <option value="{{I}}" selected="selected">{{I}}</option>
+            {% else %}
+                <option value="{{I}}">{{I}}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <br>
+
+    <label for="destino">Estación destino:</label>
+    <select id="destino" name="destino" class="selectpicker" style="width: 400px;" data-live-search="true">
+        {% for I in opc_est%}
+            {% if I == est_d %}
+                <option value="{{I}}" selected="selected">{{I}}</option>
+            {% else %}
+                <option value="{{I}}">{{I}}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <br>
+
+    <label for="Hora">Hora de salida:</label>
+    <select id="hora" name="hora" class="selectpicker" style="width: 400px;">
+        {% for I in horas%}
+            {% if I == h %}
+                <option value="{{I}}" selected="selected">{{I}}</option>
+            {% else %}
+                <option value="{{I}}">{{I}}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    <br>
+    <label for="minuto">Minuto</label>
+    <select id="minuto" name="minuto" class="selectpicker" style="width: 400px;">
+        {% for I in minutos%}
+            {% if I == m %}
+                <option value="{{I}}" selected="selected">{{I}}</option>
+            {% else %}
+                <option value="{{I}}">{{I}}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+
+    <br>
+    <input type="submit" onclick="this.form.submit()" value="Calcular" autofocus="true">
+
+</form>
